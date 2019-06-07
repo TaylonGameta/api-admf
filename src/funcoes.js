@@ -11,7 +11,7 @@ const func = {
         const valores = [null,20, 30, 40]
         let intervalo = req.body.intervalo
         let tir = req.body.tir
-        let iinicial = req.body.iinicial
+        let iinicial = req.body.inicial
         let periodos = req.body.periodos
 
         let r = 0
