@@ -21,6 +21,6 @@ app.post('/payback', (req,res)=>{
     res.json({valor : funcoes.payback(req)})
 })
 
-app.listen(3000 || process.env.PORT, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log("ouvindo na 3000")
 })
