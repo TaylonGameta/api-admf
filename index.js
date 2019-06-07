@@ -22,5 +22,5 @@ app.post('/payback', (req,res)=>{
 })
 
 app.listen(process.env.PORT || 3000, ()=>{
-    console.log("ouvindo na 3000")
+    console.log("ouvindo na 3000 ou ", process.env.PORT)
 })
