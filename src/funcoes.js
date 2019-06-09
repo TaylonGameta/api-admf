@@ -8,11 +8,17 @@ const func = {
         res.json({valor : value.toFixed(2)})
     },
     vpl : function vpl(req,res){
-        const valores = [null,20, 30, 40]
+
+        const valores = [null]
         let intervalo = req.body.intervalo
         let tir = req.body.tir
         let iinicial = req.body.inicial
         let periodos = req.body.periodos
+
+        for(let i = 0; i<periodos; i++){
+            console.log(req.body[`valor_${i}`])
+            valores.push(req.body[`valor_${i}`])
+        }
 
         let r = 0
 
@@ -28,13 +34,18 @@ const func = {
         let vps = []
         let saldo = []
         let fcatual
-        const valores = [null,400,500,600]
+        const valores = [null]
         const periodos = req.body.periodos
         const inicial = req.body.inicial
         const invervalo = Number(req.body.intervalo)
         let saldoAtual = Number(inicial)
         vps.push(Number(inicial))
         saldo.push(Number(inicial))
+
+        for(let i = 0; i<periodos; i++){
+            console.log(req.body[`valor_${i}`])
+            valores.push(req.body[`valor_${i}`])
+        }
         
         for(let i = 1; i <= periodos; i++){
             fcatual = this.calcularVP(valores[i], req.body.tir, i)
