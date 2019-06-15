@@ -5,17 +5,11 @@ const funcoes = require("./src/funcoes")
 
 app.use(bp.urlencoded({ extended: false }))
 
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', "*");
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-}
-
-app.configure(function() {
-    app.use(allowCrossDomain);
-    //some other code
-});
+})
 
 app.post('/calculavp', (req,res)=>{
     res.json({valor : funcoes.calcularVP(req.body.vf, req.body.taxa, req.body.periodos).toFixed(2)})
