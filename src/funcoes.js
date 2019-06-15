@@ -59,6 +59,10 @@ const func = {
         const n1 = Number((vps[vps.length -1] - saldo[saldo.length -1]).toFixed(2))
         const resultado = Number((periodos - 1 + (n1/vps[vps.length - 1])).toFixed(2))
         return resultado
+    },
+    tir : function tir(req){
+        const periodos = req.body.periodos
+        
     }
 }
 
